@@ -26,32 +26,63 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="tfEcuacion" max="32767" attributes="0"/>
+                  <Component id="jSeparator1" max="32767" attributes="0"/>
+                  <Component id="tfEcuacion" alignment="1" max="32767" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
                           <Component id="bt1" alignment="0" max="32767" attributes="0"/>
                           <Component id="bt4" alignment="0" max="32767" attributes="0"/>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="bt7" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="bt7" alignment="0" max="32767" attributes="0"/>
                           <Component id="bt0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="bt8" pref="51" max="32767" attributes="0"/>
+                          <Component id="bt8" max="32767" attributes="0"/>
                           <Component id="bt5" max="32767" attributes="0"/>
                           <Component id="bt2" max="32767" attributes="0"/>
-                          <Component id="btPunto" max="32767" attributes="0"/>
+                          <Component id="btPunto" min="-2" pref="51" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="btAns" max="32767" attributes="0"/>
                           <Component id="bt3" max="32767" attributes="0"/>
                           <Component id="bt6" alignment="0" max="32767" attributes="0"/>
-                          <Component id="bt9" alignment="0" max="32767" attributes="0"/>
+                          <Component id="bt9" alignment="0" min="-2" pref="51" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="207" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="btDel" min="-2" pref="51" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="btAC" min="-2" pref="51" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="btMultiplicar" min="-2" pref="51" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="btDividir" min="-2" pref="51" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="btSumar" min="-2" pref="51" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="btRestar" min="-2" pref="51" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="btExponente" min="-2" pref="51" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="btIgual" min="-2" pref="51" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="bt10" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="bt11" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="bt12" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="bt13" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="bt14" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -68,26 +99,44 @@
                   <Component id="bt7" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="bt8" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="bt9" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btDel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btAC" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="bt6" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="bt5" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="bt4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btMultiplicar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btDividir" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="bt1" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="bt3" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="bt2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btRestar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btSumar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btAns" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btPunto" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="bt0" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btIgual" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btExponente" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="138" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="bt10" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="bt11" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="bt12" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="bt13" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="bt14" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="93" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -189,6 +238,91 @@
     <Component class="javax.swing.JButton" name="btAns">
       <Properties>
         <Property name="text" type="java.lang.String" value="Ans"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btDel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="DEL"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btAC">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="AC"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btMultiplicar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="X"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btDividir">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="/"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btSumar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="+"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btRestar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="-"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btExponente">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="x^"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btIgual">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="="/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JSeparator" name="jSeparator1">
+    </Component>
+    <Component class="javax.swing.JButton" name="bt10">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Sin"/>
+        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[51, 23]"/>
+        </Property>
+        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[51, 23]"/>
+        </Property>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[51, 23]"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="bt11">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cos"/>
+        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[51, 23]"/>
+        </Property>
+        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[51, 23]"/>
+        </Property>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[51, 23]"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="bt12">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tan"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="bt13">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Log"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="bt14">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ln"/>
       </Properties>
     </Component>
   </SubComponents>
