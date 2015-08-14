@@ -42,13 +42,13 @@ public class gui extends javax.swing.JFrame {
         btExponente = new javax.swing.JButton();
         btIgual = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
-        bt10 = new javax.swing.JButton();
-        bt11 = new javax.swing.JButton();
-        bt12 = new javax.swing.JButton();
-        bt13 = new javax.swing.JButton();
-        bt14 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btSin = new javax.swing.JButton();
+        btCos = new javax.swing.JButton();
+        btTan = new javax.swing.JButton();
+        btLog = new javax.swing.JButton();
+        btLn = new javax.swing.JButton();
+        btAbrirParentesis = new javax.swing.JButton();
+        btCerrarParentesis = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -56,51 +56,141 @@ public class gui extends javax.swing.JFrame {
         bt7.setMaximumSize(new java.awt.Dimension(51, 23));
         bt7.setMinimumSize(new java.awt.Dimension(51, 23));
         bt7.setPreferredSize(new java.awt.Dimension(51, 23));
+        bt7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt7MouseClicked(evt);
+            }
+        });
 
         bt8.setText("8");
+        bt8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt8MouseClicked(evt);
+            }
+        });
 
         bt9.setText("9");
+        bt9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt9MouseClicked(evt);
+            }
+        });
 
         bt4.setText("4");
         bt4.setMaximumSize(new java.awt.Dimension(51, 23));
         bt4.setMinimumSize(new java.awt.Dimension(51, 23));
         bt4.setPreferredSize(new java.awt.Dimension(51, 23));
+        bt4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt4MouseClicked(evt);
+            }
+        });
 
         bt5.setText("5");
+        bt5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt5MouseClicked(evt);
+            }
+        });
 
         bt6.setText("6");
+        bt6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt6MouseClicked(evt);
+            }
+        });
 
         bt1.setText("1");
         bt1.setMaximumSize(new java.awt.Dimension(51, 23));
         bt1.setMinimumSize(new java.awt.Dimension(51, 23));
         bt1.setPreferredSize(new java.awt.Dimension(51, 23));
+        bt1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt1MouseClicked(evt);
+            }
+        });
 
         bt2.setText("2");
+        bt2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt2MouseClicked(evt);
+            }
+        });
 
         bt3.setText("3");
+        bt3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt3MouseClicked(evt);
+            }
+        });
 
         bt0.setText("0");
         bt0.setMaximumSize(new java.awt.Dimension(51, 23));
         bt0.setMinimumSize(new java.awt.Dimension(51, 23));
         bt0.setPreferredSize(new java.awt.Dimension(51, 23));
+        bt0.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt0MouseClicked(evt);
+            }
+        });
 
         btPunto.setText(".");
+        btPunto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btPuntoMouseClicked(evt);
+            }
+        });
 
         btAns.setText("Ans");
 
         btDel.setText("DEL");
+        btDel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btDelMouseClicked(evt);
+            }
+        });
 
         btAC.setText("AC");
+        btAC.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btACMouseClicked(evt);
+            }
+        });
 
         btMultiplicar.setText("X");
+        btMultiplicar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btMultiplicarMouseClicked(evt);
+            }
+        });
 
         btDividir.setText("/");
+        btDividir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btDividirMouseClicked(evt);
+            }
+        });
 
         btSumar.setText("+");
+        btSumar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btSumarMouseClicked(evt);
+            }
+        });
 
         btRestar.setText("-");
+        btRestar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btRestarMouseClicked(evt);
+            }
+        });
 
         btExponente.setText("x^");
+        btExponente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btExponenteMouseClicked(evt);
+            }
+        });
 
         btIgual.setText("=");
         btIgual.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -109,22 +199,57 @@ public class gui extends javax.swing.JFrame {
             }
         });
 
-        bt10.setText("Sin");
-        bt10.setMaximumSize(new java.awt.Dimension(51, 23));
-        bt10.setMinimumSize(new java.awt.Dimension(51, 23));
-        bt10.setPreferredSize(new java.awt.Dimension(51, 23));
+        btSin.setText("Sin");
+        btSin.setMaximumSize(new java.awt.Dimension(51, 23));
+        btSin.setMinimumSize(new java.awt.Dimension(51, 23));
+        btSin.setPreferredSize(new java.awt.Dimension(51, 23));
+        btSin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btSinMouseClicked(evt);
+            }
+        });
 
-        bt11.setText("Cos");
+        btCos.setText("Cos");
+        btCos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btCosMouseClicked(evt);
+            }
+        });
 
-        bt12.setText("Tan");
+        btTan.setText("Tan");
+        btTan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btTanMouseClicked(evt);
+            }
+        });
 
-        bt13.setText("Log");
+        btLog.setText("Log");
+        btLog.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btLogMouseClicked(evt);
+            }
+        });
 
-        bt14.setText("Ln");
+        btLn.setText("Ln");
+        btLn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btLnMouseClicked(evt);
+            }
+        });
 
-        jButton1.setText("(");
+        btAbrirParentesis.setText("(");
+        btAbrirParentesis.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btAbrirParentesisMouseClicked(evt);
+            }
+        });
 
-        jButton2.setText(")");
+        btCerrarParentesis.setText(")");
+        btCerrarParentesis.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btCerrarParentesisMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -172,22 +297,19 @@ public class gui extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btIgual, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(bt10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btSin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btAbrirParentesis, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton2)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(bt11)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(bt12)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(bt13)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(bt14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btCos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btCerrarParentesis, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btTan)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btLog)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btLn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -227,15 +349,15 @@ public class gui extends javax.swing.JFrame {
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bt10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bt11)
-                    .addComponent(bt12)
-                    .addComponent(bt13)
-                    .addComponent(bt14))
+                    .addComponent(btSin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btCos)
+                    .addComponent(btTan)
+                    .addComponent(btLog)
+                    .addComponent(btLn))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(btAbrirParentesis)
+                    .addComponent(btCerrarParentesis))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -268,6 +390,154 @@ public class gui extends javax.swing.JFrame {
           }
       }
     }//GEN-LAST:event_btIgualMouseClicked
+
+    private void bt7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt7MouseClicked
+        String ecuacion = tfEcuacion.getText();
+        ecuacion += "7";
+        tfEcuacion.setText(ecuacion);
+    }//GEN-LAST:event_bt7MouseClicked
+
+    private void bt8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt8MouseClicked
+        String ecuacion = tfEcuacion.getText();
+        ecuacion += "8";
+        tfEcuacion.setText(ecuacion);
+    }//GEN-LAST:event_bt8MouseClicked
+
+    private void bt9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt9MouseClicked
+        String ecuacion = tfEcuacion.getText();
+        ecuacion += "9";
+        tfEcuacion.setText(ecuacion);
+    }//GEN-LAST:event_bt9MouseClicked
+
+    private void bt4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt4MouseClicked
+        String ecuacion = tfEcuacion.getText();
+        ecuacion += "4";
+        tfEcuacion.setText(ecuacion);
+    }//GEN-LAST:event_bt4MouseClicked
+
+    private void bt5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt5MouseClicked
+        String ecuacion = tfEcuacion.getText();
+        ecuacion += "5";
+        tfEcuacion.setText(ecuacion);
+    }//GEN-LAST:event_bt5MouseClicked
+
+    private void bt6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt6MouseClicked
+        String ecuacion = tfEcuacion.getText();
+        ecuacion += "6";
+        tfEcuacion.setText(ecuacion);
+    }//GEN-LAST:event_bt6MouseClicked
+
+    private void bt1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt1MouseClicked
+        String ecuacion = tfEcuacion.getText();
+        ecuacion += "1";
+        tfEcuacion.setText(ecuacion);
+    }//GEN-LAST:event_bt1MouseClicked
+
+    private void bt2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt2MouseClicked
+        String ecuacion = tfEcuacion.getText();
+        ecuacion += "2";
+        tfEcuacion.setText(ecuacion);
+    }//GEN-LAST:event_bt2MouseClicked
+
+    private void bt3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt3MouseClicked
+        String ecuacion = tfEcuacion.getText();
+        ecuacion += "1";
+        tfEcuacion.setText(ecuacion);
+    }//GEN-LAST:event_bt3MouseClicked
+
+    private void bt0MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt0MouseClicked
+        String ecuacion = tfEcuacion.getText();
+        ecuacion += "0";
+        tfEcuacion.setText(ecuacion);
+    }//GEN-LAST:event_bt0MouseClicked
+
+    private void btPuntoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btPuntoMouseClicked
+        String ecuacion = tfEcuacion.getText();
+        ecuacion += ".";
+        tfEcuacion.setText(ecuacion);
+    }//GEN-LAST:event_btPuntoMouseClicked
+
+    private void btMultiplicarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btMultiplicarMouseClicked
+        String ecuacion = tfEcuacion.getText();
+        ecuacion += "*";
+        tfEcuacion.setText(ecuacion);
+    }//GEN-LAST:event_btMultiplicarMouseClicked
+
+    private void btDividirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btDividirMouseClicked
+        String ecuacion = tfEcuacion.getText();
+        ecuacion += "/";
+        tfEcuacion.setText(ecuacion);
+    }//GEN-LAST:event_btDividirMouseClicked
+
+    private void btSumarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btSumarMouseClicked
+        String ecuacion = tfEcuacion.getText();
+        ecuacion += "+";
+        tfEcuacion.setText(ecuacion);
+    }//GEN-LAST:event_btSumarMouseClicked
+
+    private void btRestarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btRestarMouseClicked
+        String ecuacion = tfEcuacion.getText();
+        ecuacion += "-";
+        tfEcuacion.setText(ecuacion);
+    }//GEN-LAST:event_btRestarMouseClicked
+
+    private void btExponenteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btExponenteMouseClicked
+        String ecuacion = tfEcuacion.getText();
+        ecuacion += "^";
+        tfEcuacion.setText(ecuacion);
+    }//GEN-LAST:event_btExponenteMouseClicked
+
+    private void btSinMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btSinMouseClicked
+        String ecuacion = tfEcuacion.getText();
+        ecuacion += "sin(";
+        tfEcuacion.setText(ecuacion);
+    }//GEN-LAST:event_btSinMouseClicked
+
+    private void btCosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btCosMouseClicked
+        String ecuacion = tfEcuacion.getText();
+        ecuacion += "cos(";
+        tfEcuacion.setText(ecuacion);
+    }//GEN-LAST:event_btCosMouseClicked
+
+    private void btTanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btTanMouseClicked
+        String ecuacion = tfEcuacion.getText();
+        ecuacion += "tan(";
+        tfEcuacion.setText(ecuacion);
+    }//GEN-LAST:event_btTanMouseClicked
+
+    private void btLogMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btLogMouseClicked
+        String ecuacion = tfEcuacion.getText();
+        ecuacion += "log(";
+        tfEcuacion.setText(ecuacion);
+    }//GEN-LAST:event_btLogMouseClicked
+
+    private void btLnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btLnMouseClicked
+        String ecuacion = tfEcuacion.getText();
+        ecuacion += "ln(";
+        tfEcuacion.setText(ecuacion);
+    }//GEN-LAST:event_btLnMouseClicked
+
+    private void btAbrirParentesisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btAbrirParentesisMouseClicked
+        String ecuacion = tfEcuacion.getText();
+        ecuacion += "(";
+        tfEcuacion.setText(ecuacion);
+    }//GEN-LAST:event_btAbrirParentesisMouseClicked
+
+    private void btCerrarParentesisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btCerrarParentesisMouseClicked
+        String ecuacion = tfEcuacion.getText();
+        ecuacion += ")";
+        tfEcuacion.setText(ecuacion);
+    }//GEN-LAST:event_btCerrarParentesisMouseClicked
+
+    private void btDelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btDelMouseClicked
+        String ecuacion = tfEcuacion.getText();
+        ecuacion = ecuacion.substring(0, ecuacion.length());
+        tfEcuacion.setText(ecuacion);
+    }//GEN-LAST:event_btDelMouseClicked
+
+    private void btACMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btACMouseClicked
+        tfEcuacion.setText("");
+    }//GEN-LAST:event_btACMouseClicked
 
     /**
      * @param args the command line arguments
@@ -307,11 +577,6 @@ public class gui extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt0;
     private javax.swing.JButton bt1;
-    private javax.swing.JButton bt10;
-    private javax.swing.JButton bt11;
-    private javax.swing.JButton bt12;
-    private javax.swing.JButton bt13;
-    private javax.swing.JButton bt14;
     private javax.swing.JButton bt2;
     private javax.swing.JButton bt3;
     private javax.swing.JButton bt4;
@@ -321,17 +586,22 @@ public class gui extends javax.swing.JFrame {
     private javax.swing.JButton bt8;
     private javax.swing.JButton bt9;
     private javax.swing.JButton btAC;
+    private javax.swing.JButton btAbrirParentesis;
     private javax.swing.JButton btAns;
+    private javax.swing.JButton btCerrarParentesis;
+    private javax.swing.JButton btCos;
     private javax.swing.JButton btDel;
     private javax.swing.JButton btDividir;
     private javax.swing.JButton btExponente;
     private javax.swing.JButton btIgual;
+    private javax.swing.JButton btLn;
+    private javax.swing.JButton btLog;
     private javax.swing.JButton btMultiplicar;
     private javax.swing.JButton btPunto;
     private javax.swing.JButton btRestar;
+    private javax.swing.JButton btSin;
     private javax.swing.JButton btSumar;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btTan;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField tfEcuacion;
     // End of variables declaration//GEN-END:variables

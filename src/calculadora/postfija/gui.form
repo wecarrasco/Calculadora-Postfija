@@ -74,26 +74,21 @@
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="bt10" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton1" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="btSin" max="32767" attributes="0"/>
+                          <Component id="btAbrirParentesis" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Component id="bt11" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="bt12" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="bt13" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="bt14" max="32767" attributes="0"/>
-                          </Group>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="btCos" max="32767" attributes="0"/>
+                          <Component id="btCerrarParentesis" max="32767" attributes="0"/>
                       </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="btTan" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btLog" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="btLn" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -141,16 +136,16 @@
               <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="bt10" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="bt11" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="bt12" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="bt13" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="bt14" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btSin" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btCos" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btTan" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btLog" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btLn" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btAbrirParentesis" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btCerrarParentesis" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -173,16 +168,25 @@
           <Dimension value="[51, 23]"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bt7MouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="bt8">
       <Properties>
         <Property name="text" type="java.lang.String" value="8"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bt8MouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="bt9">
       <Properties>
         <Property name="text" type="java.lang.String" value="9"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bt9MouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="bt4">
       <Properties>
@@ -197,16 +201,25 @@
           <Dimension value="[51, 23]"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bt4MouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="bt5">
       <Properties>
         <Property name="text" type="java.lang.String" value="5"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bt5MouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="bt6">
       <Properties>
         <Property name="text" type="java.lang.String" value="6"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bt6MouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="bt1">
       <Properties>
@@ -221,16 +234,25 @@
           <Dimension value="[51, 23]"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bt1MouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="bt2">
       <Properties>
         <Property name="text" type="java.lang.String" value="2"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bt2MouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="bt3">
       <Properties>
         <Property name="text" type="java.lang.String" value="3"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bt3MouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="bt0">
       <Properties>
@@ -245,11 +267,17 @@
           <Dimension value="[51, 23]"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bt0MouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btPunto">
       <Properties>
         <Property name="text" type="java.lang.String" value="."/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btPuntoMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btAns">
       <Properties>
@@ -260,36 +288,57 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="DEL"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btDelMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btAC">
       <Properties>
         <Property name="text" type="java.lang.String" value="AC"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btACMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btMultiplicar">
       <Properties>
         <Property name="text" type="java.lang.String" value="X"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btMultiplicarMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btDividir">
       <Properties>
         <Property name="text" type="java.lang.String" value="/"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btDividirMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btSumar">
       <Properties>
         <Property name="text" type="java.lang.String" value="+"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btSumarMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btRestar">
       <Properties>
         <Property name="text" type="java.lang.String" value="-"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btRestarMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btExponente">
       <Properties>
         <Property name="text" type="java.lang.String" value="x^"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btExponenteMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btIgual">
       <Properties>
@@ -301,7 +350,7 @@
     </Component>
     <Component class="javax.swing.JSeparator" name="jSeparator1">
     </Component>
-    <Component class="javax.swing.JButton" name="bt10">
+    <Component class="javax.swing.JButton" name="btSin">
       <Properties>
         <Property name="text" type="java.lang.String" value="Sin"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -314,36 +363,57 @@
           <Dimension value="[51, 23]"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btSinMouseClicked"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="bt11">
+    <Component class="javax.swing.JButton" name="btCos">
       <Properties>
         <Property name="text" type="java.lang.String" value="Cos"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btCosMouseClicked"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="bt12">
+    <Component class="javax.swing.JButton" name="btTan">
       <Properties>
         <Property name="text" type="java.lang.String" value="Tan"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btTanMouseClicked"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="bt13">
+    <Component class="javax.swing.JButton" name="btLog">
       <Properties>
         <Property name="text" type="java.lang.String" value="Log"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btLogMouseClicked"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="bt14">
+    <Component class="javax.swing.JButton" name="btLn">
       <Properties>
         <Property name="text" type="java.lang.String" value="Ln"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btLnMouseClicked"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="btAbrirParentesis">
       <Properties>
         <Property name="text" type="java.lang.String" value="("/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btAbrirParentesisMouseClicked"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="btCerrarParentesis">
       <Properties>
         <Property name="text" type="java.lang.String" value=")"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btCerrarParentesisMouseClicked"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
