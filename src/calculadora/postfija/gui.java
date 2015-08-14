@@ -365,30 +365,38 @@ public class gui extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btIgualMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btIgualMouseClicked
-      String lista[] = new String[1];
-      int cantidad = 1;
-      int cantidad_n= 1;
-      
-      String pila[] = new String[cantidad];
-      int numeros[] = new int[cantidad_n];
+        String[] post = tfEcuacion.getText().split("");
+        tfEcuacion.setText("");
+        String ecua = "";
+        for (int i = post.length; i > 0; i--) {
+            ecua.concat(post[i]);
+        }
         
-      lista[1] = btIgual.getText();
-      for(int i = 0; i < lista.length; i++){
-          if(lista[i].equals("*") || lista[i].equals("/") || lista[i].equals("+")){
-             pila[cantidad] = lista[i];
-             cantidad++;
-             if(cantidad > 1){
-                 if(pila[cantidad-1].equals("+") && lista[i].equals("*")){
-                     pila[cantidad] = lista[i];
-                 }else{
-                  
-                 }
-             }
-          }else{
-              numeros[cantidad_n] = Integer.parseInt(lista[i]);
-              cantidad_n++;
-          }
-      }
+
+//      String lista[] = new String[1];
+//      int cantidad = 1;
+//      int cantidad_n= 1;
+//      
+//      String pila[] = new String[cantidad];
+//      int numeros[] = new int[cantidad_n];
+//        
+//      lista[1] = btIgual.getText();
+//      for(int i = 0; i < lista.length; i++){
+//          if(lista[i].equals("*") || lista[i].equals("/") || lista[i].equals("+")){
+//             pila[cantidad] = lista[i];
+//             cantidad++;
+//             if(cantidad > 1){
+//                 if(pila[cantidad-1].equals("+") && lista[i].equals("*")){
+//                     pila[cantidad] = lista[i];
+//                 }else{
+//                  
+//                 }
+//             }
+//          }else{
+//              numeros[cantidad_n] = Integer.parseInt(lista[i]);
+//              cantidad_n++;
+//          }
+//      }
     }//GEN-LAST:event_btIgualMouseClicked
 
     private void bt7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt7MouseClicked
