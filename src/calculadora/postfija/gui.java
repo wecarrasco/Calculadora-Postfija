@@ -10,6 +10,22 @@ public class gui extends javax.swing.JFrame {
      */
     public gui() {
         initComponents();
+        
+    String diasPunto = "2+4*2/4-5(2+5)-4";
+    String diaPuntoArray[] = diasPunto.split("");
+
+    System.out.println("--Ejemplo 2--");
+    for(String diaPunto : diaPuntoArray){
+	if(diaPunto.equals("/")){
+        System.out.println("Separa bien los signos ");
+        }else{
+            System.out.println("Hola");
+        }
+        if(diaPunto.equals("(")){
+            String parentesis = "";
+//            parentesis = 
+        }
+    }
     }
 
     /**
@@ -365,71 +381,53 @@ public class gui extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btIgualMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btIgualMouseClicked
-        String[] post = tfEcuacion.getText().split("");
-        int c_numeros = 0;
-        String[] lista_n= new String[c_numeros];
-        tfEcuacion.setText("");
-        int cantidad = 0;
-        String[] pila = new String[cantidad];
         String ecua = "";
-        /*for (int i = post.length; i > 0; i--) {
-         ecua.concat(post[i]);
-         }*/
+        String post[] = tfEcuacion.getText().split("");
+        int c_numeros = 0;
+        int cantidad = 0;
+        int numero = 0;
+        String[] pila = new String[cantidad + 1];
+        String[] lista = new String[post.length];
+//        tfEcuacion.setText("");
 
-        for (int i = 0; i < post.length; i++) {
-            if (post[i].equals("+") || post[i].equals("-") || post[i].equals("*") || post[i].equals("/")) {
-                pila[cantidad] = post[i];
-                cantidad++;
-                if ((pila[cantidad - 1].equals("+") || pila[cantidad - 1].equals("-")) && (post[i].equals("/") || post[i].equals("*"))) {
-                    pila[cantidad] = post[i];
+        for (String signos : post) {
+            System.out.print(signos);
+            if (signos.equals("+") || signos.equals("-") || signos.equals("*") || signos.equals("/")) {
+                  if(numero == 0){                   
+                    pila[cantidad] = signos;
+                    numero++;
+                } else {
                     cantidad++;
-                }
-                if ((pila[cantidad - 1].equals("*") || pila[cantidad - 1].equals("/")) && (post[i].equals("/") || post[i].equals("*"))) {
-                    pila[cantidad] = post[i];
-                    cantidad++;
-                } 
-                if(post[i].equals("(")){
-                
-                }else {
-                    for (int j = cantidad; j > cantidad; j--) {
-                        lista_n[c_numeros] = pila[j];
-                        c_numeros++;
+                    if ((pila[cantidad-1].equals("+") || pila[cantidad-1].equals("-")) && (signos.equals("+") || signos.equals("-"))) {
+                        pila[cantidad] = signos;
+//                        cantidad++;
                     }
-                    cantidad = 0;
-                    pila[cantidad] = post[i];
-                }
+                    if ((pila[cantidad-1].equals("*") || pila[cantidad-1].equals("/")) && (signos.equals("/") || signos.equals("*"))) {
+                        pila[cantidad] = signos;
+                        cantidad++;
+                    }
+                    if (signos.equals("(")) {
+//                        do {
+//                            String parentesis = signos;
+//                            parentesis = parentesis.concat(signos);
+//                        } while (signos != ")");
+
+                    } else {
+                        for (int j = cantidad-1; j >= 0; j--) {
+                            lista[c_numeros] = pila[j-1];
+                            c_numeros++;
+                        }
+                        }
+                        cantidad = 0;
+                        pila[cantidad] = signos;
+                    }
             } else {
-                //En estas lineas me sale una exception
-                lista_n[c_numeros] = post[i];
+                lista[c_numeros] = signos;
                 c_numeros++;
             }
+            System.out.println(signos);
         }
-        
-
-//      String lista[] = new String[1];
-//      int cantidad = 1;
-//      int cantidad_n= 1;
-//      
-//      String pila[] = new String[cantidad];
-//      int numeros[] = new int[cantidad_n];
-//        
-//      lista[1] = btIgual.getText();
-//      for(int i = 0; i < lista.length; i++){
-//          if(lista[i].equals("*") || lista[i].equals("/") || lista[i].equals("+")){
-//             pila[cantidad] = lista[i];
-//             cantidad++;
-//             if(cantidad > 1){
-//                 if(pila[cantidad-1].equals("+") && lista[i].equals("*")){
-//                     pila[cantidad] = lista[i];
-//                 }else{
-//                  
-//                 }
-//             }
-//          }else{
-//              numeros[cantidad_n] = Integer.parseInt(lista[i]);
-//              cantidad_n++;
-//          }
-//      }
+                tfEcuacion.setText("");
     }//GEN-LAST:event_btIgualMouseClicked
 
     private void bt7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt7MouseClicked
@@ -482,7 +480,7 @@ public class gui extends javax.swing.JFrame {
 
     private void bt3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt3MouseClicked
         String ecuacion = tfEcuacion.getText();
-        ecuacion += "1";
+        ecuacion += "3";
         tfEcuacion.setText(ecuacion);
     }//GEN-LAST:event_bt3MouseClicked
 
