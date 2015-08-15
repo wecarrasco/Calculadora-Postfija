@@ -366,10 +366,43 @@ public class gui extends javax.swing.JFrame {
 
     private void btIgualMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btIgualMouseClicked
         String[] post = tfEcuacion.getText().split("");
+        int c_numeros = 0;
+        String[] lista_n= new String[c_numeros];
         tfEcuacion.setText("");
+        int cantidad = 0;
+        String[] pila = new String[cantidad];
         String ecua = "";
-        for (int i = post.length; i > 0; i--) {
-            ecua.concat(post[i]);
+        /*for (int i = post.length; i > 0; i--) {
+         ecua.concat(post[i]);
+         }*/
+
+        for (int i = 0; i < post.length; i++) {
+            if (post[i].equals("+") || post[i].equals("-") || post[i].equals("*") || post[i].equals("/")) {
+                pila[cantidad] = post[i];
+                cantidad++;
+                if ((pila[cantidad - 1].equals("+") || pila[cantidad - 1].equals("-")) && (post[i].equals("/") || post[i].equals("*"))) {
+                    pila[cantidad] = post[i];
+                    cantidad++;
+                }
+                if ((pila[cantidad - 1].equals("*") || pila[cantidad - 1].equals("/")) && (post[i].equals("/") || post[i].equals("*"))) {
+                    pila[cantidad] = post[i];
+                    cantidad++;
+                } 
+                if(post[i].equals("(")){
+                
+                }else {
+                    for (int j = cantidad; j > cantidad; j--) {
+                        lista_n[c_numeros] = pila[j];
+                        c_numeros++;
+                    }
+                    cantidad = 0;
+                    pila[cantidad] = post[i];
+                }
+            } else {
+                //En estas lineas me sale una exception
+                lista_n[c_numeros] = post[i];
+                c_numeros++;
+            }
         }
         
 
