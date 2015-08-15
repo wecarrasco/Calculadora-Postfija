@@ -23,7 +23,6 @@ public class gui extends javax.swing.JFrame {
         }
         if(diaPunto.equals("(")){
             String parentesis = "";
-//            parentesis = 
         }
     }
     }
@@ -389,18 +388,18 @@ public class gui extends javax.swing.JFrame {
         String[] lista = new String[post.length];
 
         for (String signos : post) {
-            System.out.println(signos);
-            if(signos.equals("+") || signos.equals("-") || signos.equals("*") || signos.equals("/")){
+            if(signos.equals("+") || signos.equals("-") || signos.equals("*") || signos.equals("/") || signos.equals("^")){
                 if(numero == 0){
                     pila[numero] = signos;
                     numero++;
                 }else{
                     if( (pila[numero-1].equals("+") || pila[numero-1].equals("-")) && ( signos.equals("+") ||
-                         signos.equals("-") || signos.equals("*") || signos.equals("/")) ){
+                         signos.equals("-") || signos.equals("*") || signos.equals("/") || signos.equals("^")) ){
                          pila[numero] = signos;
                          numero++;
-                    }else if( (pila[numero-1].equals("*") || pila[numero-1].equals("/")) && (signos.equals("*") || signos.equals("/")) ){
-                        pila[numero-1] = signos;
+                    }else if( (pila[numero-1].equals("*") || pila[numero-1].equals("/")) && (signos.equals("*") 
+                               || signos.equals("/") || signos.equals("^")) ){
+                        pila[numero] = signos;
                         numero++;
                     }else{
                         for(int i = numero; i > 0; i--){
@@ -421,6 +420,9 @@ public class gui extends javax.swing.JFrame {
         for(int i = numero; i>0; i--){
             lista[cantidad] = pila[i-1];
             cantidad++;
+        }
+        for(int i = 0; i < lista.length; i++){
+            System.out.println(lista[i]);
         }
     tfEcuacion.setText("");
     }//GEN-LAST:event_btIgualMouseClicked
