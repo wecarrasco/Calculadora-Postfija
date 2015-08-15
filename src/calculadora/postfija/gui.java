@@ -2,6 +2,7 @@ package calculadora.postfija;
 
 import java.util.ArrayList;
 import java.util.Stack;
+import java.util.StringTokenizer;
 
 public class gui extends javax.swing.JFrame {
 
@@ -11,20 +12,29 @@ public class gui extends javax.swing.JFrame {
     public gui() {
         initComponents();
         
-    String diasPunto = "2+4*2/4-5(2+5)-4";
-    String diaPuntoArray[] = diasPunto.split("");
-
-    System.out.println("--Ejemplo 2--");
-    for(String diaPunto : diaPuntoArray){
-	if(diaPunto.equals("/")){
-        System.out.println("Separa bien los signos ");
-        }else{
-            System.out.println("Hola");
-        }
-        if(diaPunto.equals("(")){
-            String parentesis = "";
-        }
-    }
+//    String diasPunto = "2+4*2/4-5(2+5)-4";
+//    String diaPuntoArray[] = diasPunto.split("");
+//
+//    System.out.println("--Ejemplo 2--");
+//    for(String diaPunto : diaPuntoArray){
+//	if(diaPunto.equals("/")){
+//        System.out.println("Separa bien los signos ");
+//        }else{
+//            System.out.println("Hola");
+//        }
+//        if(diaPunto.equals("(")){
+//            String parentesis = "";
+//        }
+//    }
+//        String entrada = "2+30*50-100/3-4^3";
+//       StringTokenizer st = new StringTokenizer(entrada, "+*-/-^");
+    
+//    String cadena = "2+30*50-100/3-4^3";
+//    String delimitadores= "[ .,;?!¡¿\'\"\\[\\]]+";
+//    String[] palabrasSeparadas = cadena.split(delimitadores);
+//    for(String  p : palabrasSeparadas){
+//        System.out.println(p);
+//    }
     }
 
     /**
@@ -388,17 +398,19 @@ public class gui extends javax.swing.JFrame {
         String[] lista = new String[post.length];
 
         for (String signos : post) {
-            if(signos.equals("+") || signos.equals("-") || signos.equals("*") || signos.equals("/") || signos.equals("^")){
+            if(signos.equals("+") || signos.equals("-") || signos.equals("*") || signos.equals("/") || signos.equals("^")
+               || signos.equals("(") || signos.equals(")")){
                 if(numero == 0){
                     pila[numero] = signos;
                     numero++;
                 }else{
                     if( (pila[numero-1].equals("+") || pila[numero-1].equals("-")) && ( signos.equals("+") ||
-                         signos.equals("-") || signos.equals("*") || signos.equals("/") || signos.equals("^")) ){
+                         signos.equals("-") || signos.equals("*") || signos.equals("/") || signos.equals("^") ||
+                         signos.equals("(") || signos.equals(")")) ){
                          pila[numero] = signos;
                          numero++;
                     }else if( (pila[numero-1].equals("*") || pila[numero-1].equals("/")) && (signos.equals("*") 
-                               || signos.equals("/") || signos.equals("^")) ){
+                               || signos.equals("/") || signos.equals("^") || signos.equals("(") || signos.equals(")")) ){
                         pila[numero] = signos;
                         numero++;
                     }else{
@@ -421,9 +433,10 @@ public class gui extends javax.swing.JFrame {
             lista[cantidad] = pila[i-1];
             cantidad++;
         }
-        for(int i = 0; i < lista.length; i++){
-            System.out.println(lista[i]);
-        }
+//        imprimiendo la posfija
+//        for(int i = 0; i < lista.length; i++){
+//            System.out.println(lista[i]);
+//        }
     tfEcuacion.setText("");
     }//GEN-LAST:event_btIgualMouseClicked
 
