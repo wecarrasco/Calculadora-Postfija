@@ -383,51 +383,46 @@ public class gui extends javax.swing.JFrame {
     private void btIgualMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btIgualMouseClicked
         String ecua = "";
         String post[] = tfEcuacion.getText().split("");
-        int c_numeros = 0;
-        int cantidad = 0;
         int numero = 0;
-        String[] pila = new String[cantidad + 1];
+        int cantidad = 0;
+        String[] pila = new String[post.length / 2];
         String[] lista = new String[post.length];
-//        tfEcuacion.setText("");
 
         for (String signos : post) {
-            System.out.print(signos);
-            if (signos.equals("+") || signos.equals("-") || signos.equals("*") || signos.equals("/")) {
-                  if(numero == 0){                   
-                    pila[cantidad] = signos;
-                    numero++;
-                } else {
-                    cantidad++;
-                    if ((pila[cantidad-1].equals("+") || pila[cantidad-1].equals("-")) && (signos.equals("+") || signos.equals("-"))) {
-                        pila[cantidad] = signos;
-//                        cantidad++;
-                    }
-                    if ((pila[cantidad-1].equals("*") || pila[cantidad-1].equals("/")) && (signos.equals("/") || signos.equals("*"))) {
-                        pila[cantidad] = signos;
-                        cantidad++;
-                    }
-                    if (signos.equals("(")) {
-//                        do {
-//                            String parentesis = signos;
-//                            parentesis = parentesis.concat(signos);
-//                        } while (signos != ")");
-
-                    } else {
-                        for (int j = cantidad-1; j >= 0; j--) {
-                            lista[c_numeros] = pila[j-1];
-                            c_numeros++;
-                        }
-                        }
-                        cantidad = 0;
-                        pila[cantidad] = signos;
-                    }
-            } else {
-                lista[c_numeros] = signos;
-                c_numeros++;
-            }
             System.out.println(signos);
+            if(signos.equals("+") || signos.equals("-") || signos.equals("*") || signos.equals("/")){
+                if(numero == 0){
+                    pila[numero] = signos;
+                    numero++;
+                }else{
+                    if( (pila[numero-1].equals("+") || pila[numero-1].equals("-")) && ( signos.equals("+") ||
+                         signos.equals("-") || signos.equals("*") || signos.equals("/")) ){
+                         pila[numero] = signos;
+                         numero++;
+                    }else if( (pila[numero-1].equals("*") || pila[numero-1].equals("/")) && (signos.equals("*") || signos.equals("/")) ){
+                        pila[numero-1] = signos;
+                        numero++;
+                    }else{
+                        for(int i = numero; i > 0; i--){
+                            lista[cantidad] = pila[i-1];
+                            cantidad++;
+                        }
+                        numero = 0;
+                        pila[numero] = signos;
+                        numero++;
+                    }
+                }
+            }else{
+                lista[cantidad] = signos;
+                cantidad++;
+            }
         }
-                tfEcuacion.setText("");
+        
+        for(int i = numero; i>0; i--){
+            lista[cantidad] = pila[i-1];
+            cantidad++;
+        }
+    tfEcuacion.setText("");
     }//GEN-LAST:event_btIgualMouseClicked
 
     private void bt7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt7MouseClicked
