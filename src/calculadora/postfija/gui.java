@@ -28,12 +28,26 @@ public class gui extends javax.swing.JFrame {
 //    }
 //        String entrada = "2+30*50-100/3-4^3";
 //       StringTokenizer st = new StringTokenizer(entrada, "+*-/-^");
-//    String cadena = "2+30*50-100/3-4^3";
-//    String delimitadores= "[ .,;?!¡¿\'\"\\[\\]]+";
-//    String[] palabrasSeparadas = cadena.split(delimitadores);
-//    for(String  p : palabrasSeparadas){
-//        System.out.println(p);
-//    }
+    String cadena = "2+30*50-100/3-4^3";
+//    String delimitadores= "[.,;?!¡¿\'\"\\[\\]]+";
+//    String delimitadores= "[-+/*^\'\"\\[\\]]";
+    String[] palabrasSeparadas = cadena.split("-\\+\\*\\/\\^");
+//    String[] palabrasSeparadas = cadena.split("\\+\\-\\*\\/\\^");
+//    String[] palabrasSeparadas = cadena.split("\\/\\*");
+       for(String  p : palabrasSeparadas){
+//        if(p.equals(delimitadores)){
+//            System.out.println("Hola");
+//        }else{
+        System.out.println(p);
+        }
+       
+        int j = 0;
+        String linea = "elemento1+-elemento2+-elemento3";
+        String [] campos = linea.split("\\+\\-");
+        while(j<campos.length){
+        System.out.println(campos[j]);
+        j++;
+        }
     }
 
     /**
@@ -418,8 +432,10 @@ public class gui extends javax.swing.JFrame {
         String post[] = tfEcuacion.getText().split("");
         int numero = 0;
         int cantidad = 0;
+        int valor = 1;
         String[] pila = new String[post.length / 2];
         String[] lista = new String[post.length];
+        String[] operaciones = new String[valor];
 
         for (String signos : post) {
             if (signos.equals("+") || signos.equals("-") || signos.equals("*") || signos.equals("/") || signos.equals("^")
@@ -503,6 +519,12 @@ public class gui extends javax.swing.JFrame {
         }
 
         tfEcuacion.setText(ecua);
+        operaciones[valor-1] = tfEcuacion.getText();
+        valor++;
+        
+        for(int i = 0; i < operaciones.length; i++){
+            System.out.println(operaciones[i]);
+        }
     }//GEN-LAST:event_btIgualMouseClicked
 
     private void bt7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt7MouseClicked
