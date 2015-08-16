@@ -84,11 +84,21 @@
                           <Component id="btCerrarParentesis" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="btTan" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btLog" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="btLn" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="btTan" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="btLog" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="btLn" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="btCerrarParentesis1" min="-2" pref="81" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="btDaS" min="-2" pref="81" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -146,6 +156,8 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btAbrirParentesis" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btCerrarParentesis" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btCerrarParentesis1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btDaS" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -413,6 +425,22 @@
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btCerrarParentesisMouseClicked"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btCerrarParentesis1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="S-&gt;D"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btCerrarParentesis1MouseClicked"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btDaS">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="D-&gt;S"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btDaSMouseClicked"/>
       </Events>
     </Component>
   </SubComponents>

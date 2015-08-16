@@ -11,7 +11,7 @@ public class gui extends javax.swing.JFrame {
      */
     public gui() {
         initComponents();
-        
+
 //    String diasPunto = "2+4*2/4-5(2+5)-4";
 //    String diaPuntoArray[] = diasPunto.split("");
 //
@@ -28,7 +28,6 @@ public class gui extends javax.swing.JFrame {
 //    }
 //        String entrada = "2+30*50-100/3-4^3";
 //       StringTokenizer st = new StringTokenizer(entrada, "+*-/-^");
-    
 //    String cadena = "2+30*50-100/3-4^3";
 //    String delimitadores= "[ .,;?!¡¿\'\"\\[\\]]+";
 //    String[] palabrasSeparadas = cadena.split(delimitadores);
@@ -74,6 +73,8 @@ public class gui extends javax.swing.JFrame {
         btLn = new javax.swing.JButton();
         btAbrirParentesis = new javax.swing.JButton();
         btCerrarParentesis = new javax.swing.JButton();
+        btCerrarParentesis1 = new javax.swing.JButton();
+        btDaS = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -276,6 +277,20 @@ public class gui extends javax.swing.JFrame {
             }
         });
 
+        btCerrarParentesis1.setText("S->D");
+        btCerrarParentesis1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btCerrarParentesis1MouseClicked(evt);
+            }
+        });
+
+        btDaS.setText("D->S");
+        btDaS.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btDaSMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -330,11 +345,18 @@ public class gui extends javax.swing.JFrame {
                             .addComponent(btCos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btCerrarParentesis, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btTan)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btLog)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btLn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btTan)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btLog)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btLn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btCerrarParentesis1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btDaS, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -382,7 +404,9 @@ public class gui extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btAbrirParentesis)
-                    .addComponent(btCerrarParentesis))
+                    .addComponent(btCerrarParentesis)
+                    .addComponent(btCerrarParentesis1)
+                    .addComponent(btDaS))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -390,7 +414,7 @@ public class gui extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btIgualMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btIgualMouseClicked
-        String ecua = "";
+        String ecua = tfEcuacion.getText();
         String post[] = tfEcuacion.getText().split("");
         int numero = 0;
         int cantidad = 0;
@@ -398,24 +422,24 @@ public class gui extends javax.swing.JFrame {
         String[] lista = new String[post.length];
 
         for (String signos : post) {
-            if(signos.equals("+") || signos.equals("-") || signos.equals("*") || signos.equals("/") || signos.equals("^")
-               || signos.equals("(") || signos.equals(")")){
-                if(numero == 0){
+            if (signos.equals("+") || signos.equals("-") || signos.equals("*") || signos.equals("/") || signos.equals("^")
+                    || signos.equals("(") || signos.equals(")")) {
+                if (numero == 0) {
                     pila[numero] = signos;
                     numero++;
-                }else{
-                    if( (pila[numero-1].equals("+") || pila[numero-1].equals("-")) && ( signos.equals("+") ||
-                         signos.equals("-") || signos.equals("*") || signos.equals("/") || signos.equals("^") ||
-                         signos.equals("(") || signos.equals(")")) ){
-                         pila[numero] = signos;
-                         numero++;
-                    }else if( (pila[numero-1].equals("*") || pila[numero-1].equals("/")) && (signos.equals("*") 
-                               || signos.equals("/") || signos.equals("^") || signos.equals("(") || signos.equals(")")) ){
+                } else {
+                    if ((pila[numero - 1].equals("+") || pila[numero - 1].equals("-")) && (signos.equals("+")
+                            || signos.equals("-") || signos.equals("*") || signos.equals("/") || signos.equals("^")
+                            || signos.equals("(") || signos.equals(")"))) {
                         pila[numero] = signos;
                         numero++;
-                    }else{
-                        for(int i = numero; i > 0; i--){
-                            lista[cantidad] = pila[i-1];
+                    } else if ((pila[numero - 1].equals("*") || pila[numero - 1].equals("/")) && (signos.equals("*")
+                            || signos.equals("/") || signos.equals("^") || signos.equals("(") || signos.equals(")"))) {
+                        pila[numero] = signos;
+                        numero++;
+                    } else {
+                        for (int i = numero; i > 0; i--) {
+                            lista[cantidad] = pila[i - 1];
                             cantidad++;
                         }
                         numero = 0;
@@ -423,21 +447,62 @@ public class gui extends javax.swing.JFrame {
                         numero++;
                     }
                 }
-            }else{
+            } else {
                 lista[cantidad] = signos;
                 cantidad++;
             }
         }
-        
-        for(int i = numero; i>0; i--){
-            lista[cantidad] = pila[i-1];
+
+        for (int i = numero; i > 0; i--) {
+            lista[cantidad] = pila[i - 1];
             cantidad++;
         }
 //        imprimiendo la posfija
-//        for(int i = 0; i < lista.length; i++){
-//            System.out.println(lista[i]);
-//        }
-    tfEcuacion.setText("");
+        for (int i = 0; i < lista.length; i++) {
+            System.out.println(lista[i]);
+        }
+
+        double operador1, operador2;
+
+        Stack<String> stack = new Stack<String>();
+        for (int i = 0; i < lista.length; i++) {
+            if (lista[i].contentEquals("+")) {
+                operador2 = Double.parseDouble(stack.pop());
+                operador1 = Double.parseDouble(stack.pop());
+                res = operador1 + operador2;
+                stack.push(Double.toString(res));
+            } else if (lista[i].contentEquals("-")) {
+                operador2 = Double.parseDouble(stack.pop());
+                operador1 = Double.parseDouble(stack.pop());
+                res = operador1 - operador2;
+                stack.push(Double.toString(res));
+            } else if (lista[i].contentEquals("*")) {
+                operador2 = Double.parseDouble(stack.pop());
+                operador1 = Double.parseDouble(stack.pop());
+                res = operador1 * operador2;
+                stack.push(Double.toString(res));
+            } else if (lista[i].contentEquals("/")) {
+                operador2 = Double.parseDouble(stack.pop());
+                operador1 = Double.parseDouble(stack.pop());
+                res = operador1 / operador2;
+                stack.push(Double.toString(res));
+            } else if (lista[i].contentEquals("^")) {
+                operador2 = Double.parseDouble(stack.pop());
+                operador1 = Double.parseDouble(stack.pop());
+                res = Math.pow(operador1, operador2);
+                stack.push(Double.toString(res));
+            } else {
+                stack.push(lista[i]);
+            }
+        }
+
+        if (res - (int) res == 0) {
+            ecua += " = " + (int) Double.parseDouble(stack.pop());
+        } else {
+            ecua += " = " + stack.pop();
+        }
+
+        tfEcuacion.setText(ecua);
     }//GEN-LAST:event_btIgualMouseClicked
 
     private void bt7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt7MouseClicked
@@ -588,6 +653,45 @@ public class gui extends javax.swing.JFrame {
         tfEcuacion.setText("");
     }//GEN-LAST:event_btACMouseClicked
 
+    private void btCerrarParentesis1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btCerrarParentesis1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btCerrarParentesis1MouseClicked
+
+    private void btDaSMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btDaSMouseClicked
+        double res2 = res;
+        int contador = 0;
+        while (res2 % 2 != 0) {
+            System.out.println(contador);
+            res2 = res2 * 10;
+            contador++;
+        };
+        int diez = 1;
+        for (int i = 0; i < contador; i++) {
+            diez = diez * 10;
+        }
+        double nominador = res * diez;
+        int nom = 0;
+        if (nominador - (int) nominador == 0) {
+            nom = (int) nominador;
+        }
+        int max = mcd (nom, diez);
+        nom = nom / max;
+        diez = diez / max;
+        String ecu = tfEcuacion.getText();
+        String [] cambio = ecu.split("=");
+        cambio [1] = nom+"/"+diez;
+        tfEcuacion.setText(cambio[0]+" = "+cambio[1]);      
+    }//GEN-LAST:event_btDaSMouseClicked
+
+    private int mcd(int a, int b) {
+        if (b == 0) {
+            return a;
+        } else {
+            return mcd(b, a % b);
+        }
+
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -638,7 +742,9 @@ public class gui extends javax.swing.JFrame {
     private javax.swing.JButton btAbrirParentesis;
     private javax.swing.JButton btAns;
     private javax.swing.JButton btCerrarParentesis;
+    private javax.swing.JButton btCerrarParentesis1;
     private javax.swing.JButton btCos;
+    private javax.swing.JButton btDaS;
     private javax.swing.JButton btDel;
     private javax.swing.JButton btDividir;
     private javax.swing.JButton btExponente;
@@ -654,4 +760,5 @@ public class gui extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField tfEcuacion;
     // End of variables declaration//GEN-END:variables
+    double res = 0.0;
 }
