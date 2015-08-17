@@ -12,28 +12,6 @@ public class gui extends javax.swing.JFrame {
     public gui() {
         initComponents();
         setLocationRelativeTo(null);
-
-//    String diasPunto = "2+4*2/4-5(2+5)-4";
-//    String diaPuntoArray[] = diasPunto.split("");
-//
-//    System.out.println("--Ejemplo 2--");
-//    for(String diaPunto : diaPuntoArray){
-//	if(diaPunto.equals("/")){
-//        System.out.println("Separa bien los signos ");
-//        }else{
-//            System.out.println("Hola");
-//        }
-//        if(diaPunto.equals("(")){
-//            String parentesis = "";
-//        }
-//    }
-//        String entrada = "2+30*50-100/3-4^3";
-//       StringTokenizer st = new StringTokenizer(entrada, "+*-/-^");
-    String cadena = "2+30*50-100/3-4^3";
-//    String delimitadores= "[.,;?!¡¿\'\"\\[\\]]+";
-//    String delimitadores= "[-+/*^\'\"\\[\\]]";
-    String[] palabrasSeparadas = cadena.split("-\\+\\*\\/\\^");
-//    String[] palabrasSeparadas = cadena.split("\\+\\-\\*\\/\\^");
     }
 
     /**
@@ -368,7 +346,8 @@ public class gui extends javax.swing.JFrame {
 
     private void btIgualMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btIgualMouseClicked
         String ecua = tfEcuacion.getText();
-        String post[] = tfEcuacion.getText().split("");
+        System.out.println(ecua2);
+        String post[] = ecua2.split(",");
         int numero = 0;
         int cantidad = 0;
         int valor = 1;
@@ -453,7 +432,7 @@ public class gui extends javax.swing.JFrame {
             ecua += " = " + stack.pop();
             ans = res;
         }
-
+        
         tfEcuacion.setText(ecua);
         txt_lista.setText( txt_lista.getText() + tfEcuacion.getText() + "\n");
     }//GEN-LAST:event_btIgualMouseClicked
@@ -461,96 +440,112 @@ public class gui extends javax.swing.JFrame {
     private void bt7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt7MouseClicked
         String ecuacion = tfEcuacion.getText();
         ecuacion += "7";
+        ecua2 += "7";
         tfEcuacion.setText(ecuacion);
     }//GEN-LAST:event_bt7MouseClicked
 
     private void bt8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt8MouseClicked
         String ecuacion = tfEcuacion.getText();
         ecuacion += "8";
+        ecua2 += "8";
         tfEcuacion.setText(ecuacion);
     }//GEN-LAST:event_bt8MouseClicked
 
     private void bt9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt9MouseClicked
         String ecuacion = tfEcuacion.getText();
         ecuacion += "9";
+        ecua2 += "9";
         tfEcuacion.setText(ecuacion);
     }//GEN-LAST:event_bt9MouseClicked
 
     private void bt4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt4MouseClicked
         String ecuacion = tfEcuacion.getText();
         ecuacion += "4";
+        ecua2 += "4";
         tfEcuacion.setText(ecuacion);
     }//GEN-LAST:event_bt4MouseClicked
 
     private void bt5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt5MouseClicked
         String ecuacion = tfEcuacion.getText();
         ecuacion += "5";
+        ecua2 += "5";
         tfEcuacion.setText(ecuacion);
     }//GEN-LAST:event_bt5MouseClicked
 
     private void bt6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt6MouseClicked
         String ecuacion = tfEcuacion.getText();
         ecuacion += "6";
+        ecua2 += "6";
         tfEcuacion.setText(ecuacion);
     }//GEN-LAST:event_bt6MouseClicked
 
     private void bt1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt1MouseClicked
         String ecuacion = tfEcuacion.getText();
         ecuacion += "1";
+        ecua2 += "1";
         tfEcuacion.setText(ecuacion);
     }//GEN-LAST:event_bt1MouseClicked
 
     private void bt2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt2MouseClicked
         String ecuacion = tfEcuacion.getText();
         ecuacion += "2";
+        ecua2 += "2";
         tfEcuacion.setText(ecuacion);
     }//GEN-LAST:event_bt2MouseClicked
 
     private void bt3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt3MouseClicked
         String ecuacion = tfEcuacion.getText();
         ecuacion += "3";
+        ecua2 += "3";
         tfEcuacion.setText(ecuacion);
     }//GEN-LAST:event_bt3MouseClicked
 
     private void bt0MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt0MouseClicked
         String ecuacion = tfEcuacion.getText();
         ecuacion += "0";
+        ecua2 += "0";
         tfEcuacion.setText(ecuacion);
     }//GEN-LAST:event_bt0MouseClicked
 
     private void btPuntoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btPuntoMouseClicked
         String ecuacion = tfEcuacion.getText();
         ecuacion += ".";
+        ecua2 += ".";
         tfEcuacion.setText(ecuacion);
     }//GEN-LAST:event_btPuntoMouseClicked
 
     private void btMultiplicarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btMultiplicarMouseClicked
         String ecuacion = tfEcuacion.getText();
         ecuacion += "*";
+        ecua2 += ",*,";
         tfEcuacion.setText(ecuacion);
     }//GEN-LAST:event_btMultiplicarMouseClicked
 
     private void btDividirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btDividirMouseClicked
         String ecuacion = tfEcuacion.getText();
         ecuacion += "/";
+        ecua2 += ",/,";
         tfEcuacion.setText(ecuacion);
     }//GEN-LAST:event_btDividirMouseClicked
 
     private void btSumarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btSumarMouseClicked
         String ecuacion = tfEcuacion.getText();
         ecuacion += "+";
+        ecua2 += ",+,";
         tfEcuacion.setText(ecuacion);
     }//GEN-LAST:event_btSumarMouseClicked
 
     private void btRestarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btRestarMouseClicked
         String ecuacion = tfEcuacion.getText();
         ecuacion += "-";
+        ecua2 += ",-,";
         tfEcuacion.setText(ecuacion);
     }//GEN-LAST:event_btRestarMouseClicked
 
     private void btExponenteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btExponenteMouseClicked
         String ecuacion = tfEcuacion.getText();
         ecuacion += "^";
+        ecua2 += ",^,";
         tfEcuacion.setText(ecuacion);
     }//GEN-LAST:event_btExponenteMouseClicked
 
@@ -679,4 +674,5 @@ public class gui extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
     double res = 0.0;
     double ans = 0.0;
+    String ecua2 = "";
 }
