@@ -70,7 +70,6 @@ public class gui extends javax.swing.JFrame {
         btExponente = new javax.swing.JButton();
         btIgual = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
-        btCerrarParentesis1 = new javax.swing.JButton();
         btDaS = new javax.swing.JButton();
         lista = new javax.swing.JButton();
 
@@ -195,6 +194,11 @@ public class gui extends javax.swing.JFrame {
         });
 
         btAns.setText("Ans");
+        btAns.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btAnsMouseClicked(evt);
+            }
+        });
 
         btDel.setText("DEL");
         btDel.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -249,13 +253,6 @@ public class gui extends javax.swing.JFrame {
         btIgual.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btIgualMouseClicked(evt);
-            }
-        });
-
-        btCerrarParentesis1.setText("S->D");
-        btCerrarParentesis1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btCerrarParentesis1MouseClicked(evt);
             }
         });
 
@@ -321,8 +318,6 @@ public class gui extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lista)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btCerrarParentesis1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btDaS, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
@@ -364,7 +359,6 @@ public class gui extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btDaS)
-                    .addComponent(btCerrarParentesis1)
                     .addComponent(lista))
                 .addGap(11, 11, 11))
         );
@@ -451,11 +445,13 @@ public class gui extends javax.swing.JFrame {
                 stack.push(lista[i]);
             }
         }
-
+        
         if (res - (int) res == 0) {
             ecua += " = " + (int) Double.parseDouble(stack.pop());
+            ans = (int)res;
         } else {
             ecua += " = " + stack.pop();
+            ans = res;
         }
 
         tfEcuacion.setText(ecua);
@@ -560,17 +556,13 @@ public class gui extends javax.swing.JFrame {
 
     private void btDelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btDelMouseClicked
         String ecuacion = tfEcuacion.getText();
-        ecuacion = ecuacion.substring(0, ecuacion.length());
+        ecuacion = ecuacion.substring(0, ecuacion.length()-1);
         tfEcuacion.setText(ecuacion);
     }//GEN-LAST:event_btDelMouseClicked
 
     private void btACMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btACMouseClicked
         tfEcuacion.setText("");
     }//GEN-LAST:event_btACMouseClicked
-
-    private void btCerrarParentesis1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btCerrarParentesis1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btCerrarParentesis1MouseClicked
 
     private void btDaSMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btDaSMouseClicked
         double res2 = res;
@@ -604,6 +596,12 @@ public class gui extends javax.swing.JFrame {
         v_lista.setVisible(true);
         v_lista.setLocationRelativeTo(null);
     }//GEN-LAST:event_listaMouseClicked
+
+    private void btAnsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btAnsMouseClicked
+        String ecuacion = tfEcuacion.getText();
+        ecuacion += ans;
+        tfEcuacion.setText(ecuacion);
+    }//GEN-LAST:event_btAnsMouseClicked
 
     private int mcd(int a, int b) {
         if (b == 0) {
@@ -662,7 +660,6 @@ public class gui extends javax.swing.JFrame {
     private javax.swing.JButton bt9;
     private javax.swing.JButton btAC;
     private javax.swing.JButton btAns;
-    private javax.swing.JButton btCerrarParentesis1;
     private javax.swing.JButton btDaS;
     private javax.swing.JButton btDel;
     private javax.swing.JButton btDividir;
@@ -681,4 +678,5 @@ public class gui extends javax.swing.JFrame {
     private javax.swing.JDialog v_lista;
     // End of variables declaration//GEN-END:variables
     double res = 0.0;
+    double ans = 0.0;
 }
