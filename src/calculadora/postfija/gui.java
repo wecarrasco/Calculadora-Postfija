@@ -11,6 +11,7 @@ public class gui extends javax.swing.JFrame {
      */
     public gui() {
         initComponents();
+        setLocationRelativeTo(null);
 
 //    String diasPunto = "2+4*2/4-5(2+5)-4";
 //    String diaPuntoArray[] = diasPunto.split("");
@@ -33,21 +34,6 @@ public class gui extends javax.swing.JFrame {
 //    String delimitadores= "[-+/*^\'\"\\[\\]]";
     String[] palabrasSeparadas = cadena.split("-\\+\\*\\/\\^");
 //    String[] palabrasSeparadas = cadena.split("\\+\\-\\*\\/\\^");
-//    String[] palabrasSeparadas = cadena.split("\\/\\*");
-       for(String  p : palabrasSeparadas){
-//        if(p.equals(delimitadores)){
-//            System.out.println("Hola");
-//        }else{
-        System.out.println(p);
-        }
-       
-        int j = 0;
-        String linea = "elemento1+-elemento2+-elemento3";
-        String [] campos = linea.split("\\+\\-");
-        while(j<campos.length){
-        System.out.println(campos[j]);
-        j++;
-        }
     }
 
     /**
@@ -58,6 +44,10 @@ public class gui extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        v_lista = new javax.swing.JDialog();
+        jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txt_lista = new javax.swing.JTextArea();
         tfEcuacion = new javax.swing.JTextField();
         bt7 = new javax.swing.JButton();
         bt8 = new javax.swing.JButton();
@@ -80,15 +70,38 @@ public class gui extends javax.swing.JFrame {
         btExponente = new javax.swing.JButton();
         btIgual = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
-        btSin = new javax.swing.JButton();
-        btCos = new javax.swing.JButton();
-        btTan = new javax.swing.JButton();
-        btLog = new javax.swing.JButton();
-        btLn = new javax.swing.JButton();
-        btAbrirParentesis = new javax.swing.JButton();
-        btCerrarParentesis = new javax.swing.JButton();
         btCerrarParentesis1 = new javax.swing.JButton();
         btDaS = new javax.swing.JButton();
+        lista = new javax.swing.JButton();
+
+        jLabel1.setText("Operaciones Realizadas");
+
+        txt_lista.setColumns(20);
+        txt_lista.setRows(5);
+        jScrollPane1.setViewportView(txt_lista);
+
+        javax.swing.GroupLayout v_listaLayout = new javax.swing.GroupLayout(v_lista.getContentPane());
+        v_lista.getContentPane().setLayout(v_listaLayout);
+        v_listaLayout.setHorizontalGroup(
+            v_listaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(v_listaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(v_listaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
+                    .addGroup(v_listaLayout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        v_listaLayout.setVerticalGroup(
+            v_listaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(v_listaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -239,58 +252,6 @@ public class gui extends javax.swing.JFrame {
             }
         });
 
-        btSin.setText("Sin");
-        btSin.setMaximumSize(new java.awt.Dimension(51, 23));
-        btSin.setMinimumSize(new java.awt.Dimension(51, 23));
-        btSin.setPreferredSize(new java.awt.Dimension(51, 23));
-        btSin.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btSinMouseClicked(evt);
-            }
-        });
-
-        btCos.setText("Cos");
-        btCos.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btCosMouseClicked(evt);
-            }
-        });
-
-        btTan.setText("Tan");
-        btTan.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btTanMouseClicked(evt);
-            }
-        });
-
-        btLog.setText("Log");
-        btLog.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btLogMouseClicked(evt);
-            }
-        });
-
-        btLn.setText("Ln");
-        btLn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btLnMouseClicked(evt);
-            }
-        });
-
-        btAbrirParentesis.setText("(");
-        btAbrirParentesis.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btAbrirParentesisMouseClicked(evt);
-            }
-        });
-
-        btCerrarParentesis.setText(")");
-        btCerrarParentesis.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btCerrarParentesisMouseClicked(evt);
-            }
-        });
-
         btCerrarParentesis1.setText("S->D");
         btCerrarParentesis1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -302,6 +263,13 @@ public class gui extends javax.swing.JFrame {
         btDaS.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btDaSMouseClicked(evt);
+            }
+        });
+
+        lista.setText("Lista ");
+        lista.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaMouseClicked(evt);
             }
         });
 
@@ -335,8 +303,8 @@ public class gui extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(btDel, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btDel, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btAC, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btMultiplicar, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -351,26 +319,11 @@ public class gui extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btIgual, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btSin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btAbrirParentesis, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btCos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btCerrarParentesis, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btTan)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btLog)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btLn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btCerrarParentesis1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btDaS, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)))))
+                        .addComponent(lista)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btCerrarParentesis1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btDaS, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -383,8 +336,8 @@ public class gui extends javax.swing.JFrame {
                     .addComponent(bt7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bt8)
                     .addComponent(bt9)
-                    .addComponent(btDel)
-                    .addComponent(btAC))
+                    .addComponent(btAC)
+                    .addComponent(btDel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bt6)
@@ -410,18 +363,10 @@ public class gui extends javax.swing.JFrame {
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btSin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btCos)
-                    .addComponent(btTan)
-                    .addComponent(btLog)
-                    .addComponent(btLn))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btAbrirParentesis)
-                    .addComponent(btCerrarParentesis)
+                    .addComponent(btDaS)
                     .addComponent(btCerrarParentesis1)
-                    .addComponent(btDaS))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lista))
+                .addGap(11, 11, 11))
         );
 
         pack();
@@ -435,7 +380,6 @@ public class gui extends javax.swing.JFrame {
         int valor = 1;
         String[] pila = new String[post.length / 2];
         String[] lista = new String[post.length];
-        String[] operaciones = new String[valor];
 
         for (String signos : post) {
             if (signos.equals("+") || signos.equals("-") || signos.equals("*") || signos.equals("/") || signos.equals("^")
@@ -472,10 +416,6 @@ public class gui extends javax.swing.JFrame {
         for (int i = numero; i > 0; i--) {
             lista[cantidad] = pila[i - 1];
             cantidad++;
-        }
-//        imprimiendo la posfija
-        for (int i = 0; i < lista.length; i++) {
-            System.out.println(lista[i]);
         }
 
         double operador1, operador2;
@@ -519,12 +459,7 @@ public class gui extends javax.swing.JFrame {
         }
 
         tfEcuacion.setText(ecua);
-        operaciones[valor-1] = tfEcuacion.getText();
-        valor++;
-        
-        for(int i = 0; i < operaciones.length; i++){
-            System.out.println(operaciones[i]);
-        }
+        txt_lista.setText( txt_lista.getText() + tfEcuacion.getText() + "\n");
     }//GEN-LAST:event_btIgualMouseClicked
 
     private void bt7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt7MouseClicked
@@ -623,48 +558,6 @@ public class gui extends javax.swing.JFrame {
         tfEcuacion.setText(ecuacion);
     }//GEN-LAST:event_btExponenteMouseClicked
 
-    private void btSinMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btSinMouseClicked
-        String ecuacion = tfEcuacion.getText();
-        ecuacion += "sin(";
-        tfEcuacion.setText(ecuacion);
-    }//GEN-LAST:event_btSinMouseClicked
-
-    private void btCosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btCosMouseClicked
-        String ecuacion = tfEcuacion.getText();
-        ecuacion += "cos(";
-        tfEcuacion.setText(ecuacion);
-    }//GEN-LAST:event_btCosMouseClicked
-
-    private void btTanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btTanMouseClicked
-        String ecuacion = tfEcuacion.getText();
-        ecuacion += "tan(";
-        tfEcuacion.setText(ecuacion);
-    }//GEN-LAST:event_btTanMouseClicked
-
-    private void btLogMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btLogMouseClicked
-        String ecuacion = tfEcuacion.getText();
-        ecuacion += "log(";
-        tfEcuacion.setText(ecuacion);
-    }//GEN-LAST:event_btLogMouseClicked
-
-    private void btLnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btLnMouseClicked
-        String ecuacion = tfEcuacion.getText();
-        ecuacion += "ln(";
-        tfEcuacion.setText(ecuacion);
-    }//GEN-LAST:event_btLnMouseClicked
-
-    private void btAbrirParentesisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btAbrirParentesisMouseClicked
-        String ecuacion = tfEcuacion.getText();
-        ecuacion += "(";
-        tfEcuacion.setText(ecuacion);
-    }//GEN-LAST:event_btAbrirParentesisMouseClicked
-
-    private void btCerrarParentesisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btCerrarParentesisMouseClicked
-        String ecuacion = tfEcuacion.getText();
-        ecuacion += ")";
-        tfEcuacion.setText(ecuacion);
-    }//GEN-LAST:event_btCerrarParentesisMouseClicked
-
     private void btDelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btDelMouseClicked
         String ecuacion = tfEcuacion.getText();
         ecuacion = ecuacion.substring(0, ecuacion.length());
@@ -704,6 +597,13 @@ public class gui extends javax.swing.JFrame {
         cambio [1] = nom+"/"+diez;
         tfEcuacion.setText(cambio[0]+" = "+cambio[1]);      
     }//GEN-LAST:event_btDaSMouseClicked
+
+    private void listaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaMouseClicked
+        v_lista.setModal(true);
+        v_lista.pack();
+        v_lista.setVisible(true);
+        v_lista.setLocationRelativeTo(null);
+    }//GEN-LAST:event_listaMouseClicked
 
     private int mcd(int a, int b) {
         if (b == 0) {
@@ -761,26 +661,24 @@ public class gui extends javax.swing.JFrame {
     private javax.swing.JButton bt8;
     private javax.swing.JButton bt9;
     private javax.swing.JButton btAC;
-    private javax.swing.JButton btAbrirParentesis;
     private javax.swing.JButton btAns;
-    private javax.swing.JButton btCerrarParentesis;
     private javax.swing.JButton btCerrarParentesis1;
-    private javax.swing.JButton btCos;
     private javax.swing.JButton btDaS;
     private javax.swing.JButton btDel;
     private javax.swing.JButton btDividir;
     private javax.swing.JButton btExponente;
     private javax.swing.JButton btIgual;
-    private javax.swing.JButton btLn;
-    private javax.swing.JButton btLog;
     private javax.swing.JButton btMultiplicar;
     private javax.swing.JButton btPunto;
     private javax.swing.JButton btRestar;
-    private javax.swing.JButton btSin;
     private javax.swing.JButton btSumar;
-    private javax.swing.JButton btTan;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JButton lista;
     private javax.swing.JTextField tfEcuacion;
+    private javax.swing.JTextArea txt_lista;
+    private javax.swing.JDialog v_lista;
     // End of variables declaration//GEN-END:variables
     double res = 0.0;
 }
